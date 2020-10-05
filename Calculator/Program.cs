@@ -15,7 +15,7 @@ namespace Calculator
             int b = 22;
             int c = a + b;
             Console.WriteLine(c);
-            Console.ReadKey();
+            
 
 
             //Display title as the Calculator App.
