@@ -27,7 +27,7 @@ namespace CalculatorTests
         }
 
         [Test]
-        public void DivideByFloatTest()
+        public void DivideByDblTest()
         {
             Assert.AreEqual(6,calculator.Div(3, 0.5));
 
