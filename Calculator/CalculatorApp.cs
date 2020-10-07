@@ -1,20 +1,70 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
 
 namespace Calculator
 {
     public class CalculatorApp
     {
-        ///Add your code for application here
+
+        //Input Validation
+        public void valid(object a , object b)
+        {
+            Regex rx = new Regex("00");
+            MatchCollection matchesa = rx.Matches((string)a);
+            MatchCollection matchesb = rx.Matches((string)b);
+            if (matchesa.Count != 0 | matchesb.Count != 0)
+            {
+                throw new Exception("Do not enter values with leading zeroes");
+            }
+        }
+
+
         ///Write a method for Subtraction, Multiplication, Division
 
         public int Add(int a, int b)
         {
+            valid(a, b);
+            return a + b;
+        }
+        public float Add(float a, float b)
+        {
+            valid(a, b);
+            return a + b;
+        }
+        public double Add(double a, double b)
+        {
+            valid(a, b);
             return a + b;
         }
 
+
+        public int Sub(int a, int b)
+        {
+            valid(a, b);
+            return a - b;
+        }
+        public double Sub(double a, double b)
+        {
+            valid(a, b);
+            return a - b;
+        }
+
+        public int Mult(int a, int b)
+        {
+            valid(a, b);
+            return a * b;
+        }
+        public double Mult(double a, double b)
+        {
+            valid(a, b);
+            return a * b;
+        }
+
+        //Div op & its overloads
         public int Div(int a, int b)
         {
+            valid(a, b);
             if (b == 0)
             {
                 Console.WriteLine("The denominator must be non-zero.");
@@ -31,24 +81,17 @@ namespace Calculator
 
         public float Div(float a, float b)
         {
+            valid(a, b);
             if (b == 0)
             {
                 Console.WriteLine("The denominator must be non-zero.");
             }
             return a / b;
-
-            /*catch (DivideByZeroException e)
-            {
-
-                Console.WriteLine("Denominator cannot be zero.");
-                Console.WriteLine("Please re-enter denominator: ");
-                float v = (float)Console.Read();
-                return Div(a, v);
-            }*/
         }
 
         public double Div(double a, double b)
         {
+            valid(a, b);
             if (b == 0)
             {
                 Console.WriteLine("The denominator must be non-zero.");

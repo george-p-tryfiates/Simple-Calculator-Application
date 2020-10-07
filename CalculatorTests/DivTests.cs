@@ -32,6 +32,12 @@ namespace CalculatorTests
             Assert.AreEqual(6,calculator.Div(3, 0.5));
 
         }
+
+        [Test]
+        public void DivDblByInt()
+        {
+            Assert.AreEqual(0.25, calculator.Div(0.5, 2));
+        }
        
     }
 
