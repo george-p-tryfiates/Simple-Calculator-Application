@@ -7,20 +7,21 @@ namespace Calculator
     {
        
         static void Main(string[] args){
-            
+
             /// Example to get you started,
             /// Remove the following code below after you run the app to ensure it works.
-            
-            int a = 49;
-            int b = 22;
-            int c = a + b;
-            Console.WriteLine(c);
-            
+
+
 
 
             //Display title as the Calculator App.
+            Console.WriteLine("Calculator App");
+            Console.WriteLine();
+
 
             //Declare 3 variables and set to empty.
+            
+
 
             //*Hint* numInput1= ; numInput2= ; result = ;
             //String numbInput1 = "";
@@ -30,8 +31,9 @@ namespace Calculator
             //Ask the user to type the first number
 
             //*Hint*
-            //Console.WriteLine("Type a number, and then press Enter: ");
-            //inputNumb1 = Console.ReadLine();
+            Console.WriteLine("Type a number, and then press Enter: ");
+
+            //inputNumb1 = Console.ReadLine().Split();
 
 
             //Ask the user to type the second number.

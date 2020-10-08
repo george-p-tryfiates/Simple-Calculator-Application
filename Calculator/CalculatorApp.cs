@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Calculator
@@ -10,12 +12,20 @@ namespace Calculator
         //Input Validation
         public void valid(object a , object b)
         {
-            Regex rx = new Regex("00");
+            Regex rx = new Regex(@"00");
             MatchCollection matchesa = rx.Matches((string)a);
             MatchCollection matchesb = rx.Matches((string)b);
             if (matchesa.Count != 0 | matchesb.Count != 0)
             {
                 throw new Exception("Do not enter values with leading zeroes");
+            }
+
+            Regex r = new Regex(@"\w");
+            MatchCollection matchaa = rx.Matches((string)a);
+            MatchCollection matchebb = rx.Matches((string)b);
+            if (matchaa.Count != 0 | matchebb.Count != 0)
+            {
+                throw new Exception("Non-numeric characters are invalid");
             }
         }
 
