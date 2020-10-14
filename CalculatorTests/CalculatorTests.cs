@@ -10,6 +10,28 @@ namespace CalculatorTests
     {
         CalculatorApp calculator = new CalculatorApp();
 
+        [Test]
+        public void AddTest()
+        {
+            Assert.AreEqual(2, calculator.Add(1, 1));
+            Assert.AreEqual(2.2, calculator.Add(1.1, 1.1));
+           
+        }
+
+        [Test]
+        public void SubTest()
+        {
+            Assert.AreEqual(1, calculator.Sub(2, 1));
+            Assert.AreEqual(0.5, calculator.Sub(1, 0.5));
+
+        }
+
+        [Test]
+        public void MultTest()
+        {
+            Assert.AreEqual(1, calculator.Mult(1, 1));
+            Assert.AreEqual(1.5, calculator.Mult(3, 0.5));
+        }
         
 
         [Test]
