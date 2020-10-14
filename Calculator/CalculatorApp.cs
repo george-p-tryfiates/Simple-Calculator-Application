@@ -13,22 +13,23 @@ namespace Calculator
         public void valid(object a , object b)
         {
             Regex rx = new Regex(@"00");
-            MatchCollection matchesa = rx.Matches((string)a);
-            MatchCollection matchesb = rx.Matches((string)b);
+            MatchCollection matchesa = rx.Matches(Convert.ToString(a));
+            MatchCollection matchesb = rx.Matches(Convert.ToString(b));
             if (matchesa.Count != 0 | matchesb.Count != 0)
             {
                 throw new Exception("Do not enter values with leading zeroes");
             }
 
             Regex r = new Regex(@"\w");
-            MatchCollection matchaa = rx.Matches((string)a);
-            MatchCollection matchebb = rx.Matches((string)b);
+            MatchCollection matchaa = rx.Matches(Convert.ToString(a));
+            MatchCollection matchebb = rx.Matches(Convert.ToString(b));
             if (matchaa.Count != 0 | matchebb.Count != 0)
             {
                 throw new Exception("Non-numeric characters are invalid");
             }
         }
 
+        
 
         ///Write a method for Subtraction, Multiplication, Division
 
